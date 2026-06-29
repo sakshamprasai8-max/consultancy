@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: educonsultpro-db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: your_secure_password # CHANGE THIS
+      POSTGRES_DB: educonsultpro
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: educonsultpro-api
+    restart: always
+    env_file:
+      - ./backend/.env.production
+    environment:
+      DATABASE_URL: "postgresql://postgres:your_secure_password@postgres:5432/educonsultpro?schema=public" # Matches postgres service
+    ports:
+      - "5000:5000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: "https://api.educonsultpro.com/api"
+        NEXT_PUBLIC_SITE_URL: "https://educonsultpro.com"
+    container_name: educonsultpro-web
+    restart: always
+    env_file:
+      - ./frontend/.env.production
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

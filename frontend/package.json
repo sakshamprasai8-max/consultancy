@@ -1,0 +1,32 @@
+{
+  "name": "edu-consult-pro-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "axios": "^1.6.8",
+    "framer-motion": "^11.0.8",
+    "gsap": "^3.12.5",
+    "lucide-react": "^0.359.0",
+    "next": "^15.0.3",
+    "react": "^19.0.0-rc-66855b9a-20241106",
+    "react-dom": "^19.0.0-rc-66855b9a-20241106",
+    "recharts": "^2.12.2",
+    "three": "^0.162.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/three": "^0.162.0",
+    "autoprefixer": "^10.4.18",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3"
+  }
+}
