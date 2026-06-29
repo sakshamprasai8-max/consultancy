@@ -31,9 +31,7 @@ out/
 *.sqlite
 prisma/*.db
 prisma/*.sqlite-journal
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
+# package-lock.json (Removed from ignore to allow production builds)
 
 # OS files
 .DS_Store
