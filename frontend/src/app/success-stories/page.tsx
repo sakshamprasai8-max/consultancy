@@ -8,7 +8,7 @@ import { Award, GraduationCap, MapPin, CheckCircle } from 'lucide-react';
 export default function SuccessStoriesPage() {
   const cases = [
     {
-      name: 'Julian Everhart',
+      name: 'Aaryan Sharma',
       uni: 'University of Toronto',
       program: 'M.S. in Computer Science',
       gpa: 'GPA 3.8 / IELTS 7.5',
@@ -22,7 +22,7 @@ export default function SuccessStoriesPage() {
       ],
     },
     {
-      name: 'Samantha Miller',
+      name: 'Priya Thapa',
       uni: 'University of Melbourne',
       program: 'Master of Information Technology',
       gpa: 'GPA 3.5 / IELTS 7.0',

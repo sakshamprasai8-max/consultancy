@@ -55,10 +55,10 @@ async function main() {
     data: {
       email: 'student@educonsultpro.com',
       passwordHash: studentPasswordHash,
-      firstName: 'Julian',
-      lastName: 'Everhart',
+      firstName: 'Aaryan',
+      lastName: 'Sharma',
       role: Role.STUDENT,
-      phone: '+15550102',
+      phone: '+977 9812345678',
     },
   });
 
@@ -68,9 +68,9 @@ async function main() {
       userId: studentUser.id,
       dateOfBirth: new Date('2003-05-15'),
       gender: 'Male',
-      address: '742 Evergreen Terrace, Springfield',
-      passportNumber: 'US987654321',
-      currentQualification: 'High School Diploma (GPA 3.8)',
+      address: 'Koteshwor, Kathmandu, Nepal',
+      passportNumber: 'NP1234567',
+      currentQualification: 'Plus Two (GPA 3.6)',
       preferredCountry: 'Canada',
       preferredSubject: 'Computer Science',
       testType: 'IELTS',
@@ -233,7 +233,7 @@ async function main() {
   await prisma.document.create({
     data: {
       studentId: studentUser.id,
-      name: 'Julian_Everhart_Transcript.pdf',
+      name: 'Aaryan_Sharma_Transcript.pdf',
       type: 'Academic Transcript',
       url: '/uploads/documents/sample_transcript.pdf',
       publicId: 'mock_sample_transcript',
@@ -245,7 +245,7 @@ async function main() {
   await prisma.document.create({
     data: {
       studentId: studentUser.id,
-      name: 'Julian_Everhart_IELTS.pdf',
+      name: 'Aaryan_Sharma_IELTS.pdf',
       type: 'English Language Test Results',
       url: '/uploads/documents/sample_ielts.pdf',
       publicId: 'mock_sample_ielts',
@@ -257,16 +257,15 @@ async function main() {
   await prisma.document.create({
     data: {
       studentId: studentUser.id,
-      name: 'Julian_Everhart_SOP.pdf',
+      name: 'Aaryan_Sharma_SOP.pdf',
       type: 'Statement of Purpose',
       url: '/uploads/documents/sample_sop.pdf',
       publicId: 'mock_sample_sop',
       status: DocumentStatus.PENDING,
-      remarks: 'Under review by counselor Arthur.',
+      remarks: 'Under review by counselor Saksham.',
     },
   });
-
-  // 7. Create Appointments
+// 7. Create Appointments
   await prisma.appointment.create({
     data: {
       studentId: studentUser.id,
